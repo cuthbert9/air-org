@@ -10,10 +10,12 @@ export default function PartnersPage() {
         <p className="text-sm font-medium uppercase tracking-wide text-muted">
           Directory
         </p>
-        <h1 className="mt-1 text-3xl font-bold text-foreground">Partners</h1>
+        <h1 className="mt-1 text-3xl font-bold text-foreground">
+          Shareholders & investors
+        </h1>
         <p className="mt-2 max-w-2xl text-sm text-muted">
-          Select a partner to open their analytics dashboard, or use the header
-          switcher for quick navigation.
+          Select a shareholder company to open their capital and ownership
+          dashboard, or use the header switcher for quick navigation.
         </p>
       </div>
 

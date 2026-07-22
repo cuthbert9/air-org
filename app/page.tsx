@@ -12,11 +12,12 @@ export default function HomePage() {
               Airtel · Internal
             </p>
             <h1 className="mt-3 text-4xl font-bold leading-tight sm:text-5xl">
-              Partner Portal
+              Shareholder Portal
             </h1>
             <p className="mt-4 max-w-md text-sm leading-7 text-white/90">
-              Monitor analytics across all partners, then select an individual
-              partner to inspect KPIs, products, and recent activity.
+              Monitor investor companies and ownership performance, then open a
+              single shareholder dashboard for dividends, stake, and capital
+              events.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -43,26 +44,26 @@ export default function HomePage() {
                 <span className="font-semibold text-foreground">
                   Combined overview —
                 </span>{" "}
-                revenue, transactions, subscribers, and success rate across
-                partners.
+                dividends, distributions, shares held, and portfolio yield
+                across shareholders.
               </li>
               <li>
                 <span className="font-semibold text-foreground">
-                  Partner switcher —
+                  Shareholder switcher —
                 </span>{" "}
-                jump between all partners and a single partner dashboard.
+                jump between all investors and a single company dashboard.
               </li>
               <li>
                 <span className="font-semibold text-foreground">
                   Detail views —
                 </span>{" "}
-                top products and recent transactions per partner.
+                ownership stake, portfolio lines, and recent capital events.
               </li>
             </ul>
             <div className="flex flex-wrap gap-3 pt-2">
-              <PrimaryButton href="/partners">Browse partners</PrimaryButton>
+              <PrimaryButton href="/partners">Browse shareholders</PrimaryButton>
               <SecondaryButton href="/dashboard">
-                Partners overview
+                Investors overview
               </SecondaryButton>
             </div>
           </div>

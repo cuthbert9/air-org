@@ -35,6 +35,7 @@ export interface Partner {
   status: PartnerStatus;
   lastSync: string;
   description: string;
+  ownershipPercent: number;
 }
 
 export interface TrendPoint {
@@ -42,12 +43,14 @@ export interface TrendPoint {
   value: number;
 }
 
+/** Portfolio / business-unit contribution for a shareholder */
 export interface TopProduct {
   name: string;
   volume: number;
   revenueTzs: number;
 }
 
+/** Capital event: dividend, distribution, or contribution */
 export interface RecentTransaction {
   id: string;
   reference: string;
@@ -59,9 +62,13 @@ export interface RecentTransaction {
 
 export interface PartnerMetrics {
   partnerId: string;
+  /** Dividends / returns attributed (TZS) */
   revenueTzs: number;
+  /** Number of capital distributions */
   transactions: number;
+  /** Shares held */
   activeSubscribers: number;
+  /** Portfolio / ownership yield % */
   successRate: number;
   trend: TrendPoint[];
   topProducts: TopProduct[];

@@ -19,7 +19,7 @@ export default function PartnerSwitcher() {
     pathname.startsWith(`/partners/${partner.id}`),
   );
 
-  const label = activePartner?.name ?? "All partners";
+  const label = activePartner?.name ?? "All shareholders";
 
   useEffect(() => {
     function onPointerDown(event: MouseEvent) {
@@ -73,7 +73,7 @@ export default function PartnerSwitcher() {
                 !activePartner && "bg-red-50 font-semibold text-airtel",
               )}
             >
-              All partners
+              All shareholders
             </button>
           </li>
           {partners.map((partner) => (
@@ -101,7 +101,7 @@ export default function PartnerSwitcher() {
               onClick={() => setOpen(false)}
               className="block px-3 py-2.5 text-sm font-medium text-airtel hover:bg-red-50"
             >
-              View partner directory
+              View shareholder directory
             </Link>
           </li>
         </ul>

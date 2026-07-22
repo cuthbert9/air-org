@@ -6,8 +6,9 @@ import Providers from "@/components/Providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Airtel Partner Portal",
-  description: "Internal analytics portal for Airtel partner performance",
+  title: "Airtel Shareholder Portal",
+  description:
+    "Internal analytics portal for Airtel shareholder and investor companies",
 };
 
 export default function RootLayout({

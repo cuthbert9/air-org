@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/dashboard", label: "Dashboard" },
-  { href: "/partners", label: "Partners" },
+  { href: "/partners", label: "Shareholders" },
 ];
 
 export default function Navbar() {
@@ -24,7 +24,7 @@ export default function Navbar() {
     <header className="border-b border-border bg-white">
       <div className="bg-[#efefef] px-6 py-1.5 text-xs text-muted">
         <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <span>Partner Portal · Internal</span>
+          <span>Shareholder Portal · Internal</span>
           <span>Airtel Tanzania</span>
         </div>
       </div>

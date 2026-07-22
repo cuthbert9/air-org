@@ -39,7 +39,7 @@ export default function AirtelLogo({
           onRed ? "text-white/80" : "text-muted",
         )}
       >
-        Partner Portal
+        Shareholder Portal
       </span>
     </Link>
   );

@@ -13,7 +13,7 @@ export default function PartnerComparison() {
   const partners = getPartners();
 
   return (
-    <Card title="Partner comparison">
+    <Card title="Shareholder comparison">
       <div className="grid gap-4 lg:grid-cols-2">
         {partners.map((partner) => {
           const metrics = getPartnerMetrics(partner.id);
@@ -29,26 +29,28 @@ export default function PartnerComparison() {
                   <h3 className="font-semibold text-foreground">
                     {partner.name}
                   </h3>
-                  <p className="text-sm text-muted">{partner.category}</p>
+                  <p className="text-sm text-muted">
+                    {partner.category} · {partner.ownershipPercent}% stake
+                  </p>
                 </div>
                 <StatusBadge status={partner.status} />
               </div>
 
               <dl className="mt-4 grid grid-cols-3 gap-3 text-center">
                 <div>
-                  <dt className="text-xs text-muted">Revenue</dt>
+                  <dt className="text-xs text-muted">Returns</dt>
                   <dd className="mt-1 text-sm font-semibold">
                     {formatTzs(metrics.revenueTzs)}
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-xs text-muted">Txns</dt>
+                  <dt className="text-xs text-muted">Distributions</dt>
                   <dd className="mt-1 text-sm font-semibold">
                     {formatNumber(metrics.transactions)}
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-xs text-muted">Success</dt>
+                  <dt className="text-xs text-muted">Yield</dt>
                   <dd className="mt-1 text-sm font-semibold">
                     {formatPercent(metrics.successRate)}
                   </dd>
@@ -69,9 +71,9 @@ export default function PartnerComparison() {
       </div>
 
       <p className="mt-4 text-sm text-muted">
-        Need the full directory?{" "}
+        Need the full list?{" "}
         <Link href="/partners" className="font-semibold text-airtel">
-          Browse partners
+          Browse shareholders
         </Link>
       </p>
     </Card>

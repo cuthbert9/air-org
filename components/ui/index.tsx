@@ -178,19 +178,23 @@ export function KpiGrid({
 }) {
   return (
     <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-      <KpiTile label="Revenue" value={formatTzs(revenueTzs)} kind="revenue" />
       <KpiTile
-        label="Transactions"
+        label="Dividends & returns"
+        value={formatTzs(revenueTzs)}
+        kind="revenue"
+      />
+      <KpiTile
+        label="Distributions"
         value={formatNumber(transactions)}
         kind="tx"
       />
       <KpiTile
-        label="Active subscribers"
+        label="Shares held"
         value={formatNumber(activeSubscribers)}
         kind="users"
       />
       <KpiTile
-        label="Success rate"
+        label="Portfolio yield"
         value={formatPercent(successRate)}
         kind="success"
       />
@@ -218,13 +222,15 @@ export function TrendBars({
             <div
               className="w-full rounded-t bg-gradient-to-t from-airtel-deep via-airtel to-[#ff4d4d]"
               style={{ height: `${(point.value / max) * 100}%` }}
-              title={`${point.label}: ${formatNumber(point.value)}k`}
+              title={`${point.label}: ${formatNumber(point.value)}`}
             />
             <span className="text-xs font-medium text-muted">{point.label}</span>
           </div>
         ))}
       </div>
-      <p className="mt-3 text-xs text-muted">Daily transaction volume (thousands)</p>
+      <p className="mt-3 text-xs text-muted">
+        Daily capital activity index (distributions & settlements)
+      </p>
     </Card>
   );
 }
@@ -244,12 +250,15 @@ export function PartnerCard({ partner }: { partner: Partner }) {
       <p className="mt-3 flex-1 text-sm leading-6 text-foreground/80">
         {partner.description}
       </p>
-      <p className="mt-4 text-xs text-muted">
-        Last sync: {formatSyncTime(partner.lastSync)}
+      <p className="mt-3 text-sm font-semibold text-airtel">
+        Ownership stake: {partner.ownershipPercent}%
+      </p>
+      <p className="mt-2 text-xs text-muted">
+        Last update: {formatSyncTime(partner.lastSync)}
       </p>
       <div className="mt-4">
         <PrimaryButton href={`/partners/${partner.id}`} className="w-full">
-          View dashboard
+          View shareholder dashboard
         </PrimaryButton>
       </div>
     </article>

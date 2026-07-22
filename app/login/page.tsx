@@ -24,11 +24,12 @@ export default function LoginPage() {
           <div className="text-white">
             <AirtelLogo variant="onRed" />
             <h1 className="mt-8 max-w-md text-4xl font-bold leading-tight">
-              Partner analytics for Airtel operators
+              Shareholder analytics for Airtel operators
             </h1>
             <p className="mt-4 max-w-md text-sm leading-7 text-white/90">
-              Review combined partner performance, then drill into individual
-              dashboards for mobile money and VAS partners.
+              Review combined investor performance, then drill into individual
+              shareholder company dashboards for ownership, dividends, and
+              capital activity.
             </p>
           </div>
 

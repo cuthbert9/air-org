@@ -34,7 +34,7 @@ export default async function PartnerDetailPage({
       <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
         <div>
           <p className="text-sm font-medium uppercase tracking-wide text-muted">
-            Partner dashboard
+            Shareholder dashboard
           </p>
           <div className="mt-1 flex flex-wrap items-center gap-3">
             <h1 className="text-3xl font-bold text-foreground">
@@ -45,12 +45,16 @@ export default async function PartnerDetailPage({
           <p className="mt-2 max-w-2xl text-sm text-muted">
             {partner.description}
           </p>
-          <p className="mt-2 text-xs text-muted">
-            {partner.category} · Last sync {formatSyncTime(partner.lastSync)}
+          <p className="mt-2 text-sm font-semibold text-airtel">
+            Ownership stake: {partner.ownershipPercent}%
+          </p>
+          <p className="mt-1 text-xs text-muted">
+            {partner.category} · Last update{" "}
+            {formatSyncTime(partner.lastSync)}
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
-          <SecondaryButton href="/dashboard">All partners</SecondaryButton>
+          <SecondaryButton href="/dashboard">All shareholders</SecondaryButton>
           <PrimaryButton href="/partners">Directory</PrimaryButton>
         </div>
       </div>
@@ -65,11 +69,11 @@ export default async function PartnerDetailPage({
 
         <div className="grid gap-6 lg:grid-cols-2">
           <TrendBars
-            title={`${partner.name} · 7-day volume`}
+            title={`${partner.name} · 7-day capital activity`}
             points={metrics.trend}
           />
 
-          <Card title="Top products">
+          <Card title="Attributed portfolio lines">
             <ul className="divide-y divide-border">
               {metrics.topProducts.map((product) => (
                 <li
@@ -81,7 +85,7 @@ export default async function PartnerDetailPage({
                       {product.name}
                     </p>
                     <p className="text-sm text-muted">
-                      {formatNumber(product.volume)} volume
+                      {formatNumber(product.volume)} share units
                     </p>
                   </div>
                   <p className="text-sm font-semibold text-airtel">
@@ -93,13 +97,13 @@ export default async function PartnerDetailPage({
           </Card>
         </div>
 
-        <Card title="Recent transactions">
+        <Card title="Recent capital events">
           <div className="overflow-x-auto">
             <table className="min-w-full text-left text-sm">
               <thead className="border-b border-border text-xs uppercase tracking-wide text-muted">
                 <tr>
                   <th className="px-2 py-3 font-medium">Reference</th>
-                  <th className="px-2 py-3 font-medium">Product</th>
+                  <th className="px-2 py-3 font-medium">Event</th>
                   <th className="px-2 py-3 font-medium">Amount</th>
                   <th className="px-2 py-3 font-medium">Status</th>
                   <th className="px-2 py-3 font-medium">Time</th>
