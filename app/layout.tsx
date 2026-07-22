@@ -6,8 +6,8 @@ import Providers from "@/components/Providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Air Delivery",
-  description: "Minimal full-stack Next.js delivery app",
+  title: "Airtel Partner Portal",
+  description: "Internal analytics portal for Airtel partner performance",
 };
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <body className="min-h-full bg-zinc-50 text-zinc-900 antialiased">
+      <body className="min-h-full bg-background text-foreground antialiased">
         <Providers>
           <Navbar />
           <main>{children}</main>

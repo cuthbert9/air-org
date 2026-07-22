@@ -1,17 +1,33 @@
 @import "tailwindcss";
-@config "../tailwind.config.ts";
 
 :root {
-  --background: #fafafa;
-  --foreground: #18181b;
+  --background: #f5f5f5;
+  --foreground: #1a1a1a;
+  --airtel-red: #e60000;
+  --airtel-red-dark: #c40000;
+  --airtel-red-deep: #9b0000;
+  --surface: #ffffff;
+  --muted: #6b7280;
+  --border: #e5e7eb;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-airtel: var(--airtel-red);
+  --color-airtel-dark: var(--airtel-red-dark);
+  --color-airtel-deep: var(--airtel-red-deep);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
 }
